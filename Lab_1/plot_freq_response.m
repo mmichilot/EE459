@@ -29,7 +29,8 @@ subplot(2,1,2);
 plot(Fd, (angle(HF)./pi), 'g', 'LineWidth', 2)
 grid on
 xlabel('Digital Frequency  F (cycles/sample)')
-ylabel('Phase Response (\pi radians)')
+ylabel('Phase Response /pi')
+ylim([-1 1])
 
 
 figure(figure_num+1);
@@ -52,7 +53,8 @@ subplot(2,1,2);
 plot(fsample*Fd, (angle(HF)./pi), 'g', 'LineWidth', 2)
 grid on
 xlabel('Analog Frequency f (Hz)')
-ylabel('Phase Response (\pi radians)')
+ylabel('Phase Response /pi')
+ylim([-1 1])
 
 end
 
