@@ -39,11 +39,11 @@ title('Frequency Response of Filter')
 subplot(2,1,2) % Display plots in 2 rows / 1 column; This is the 2nd plot.
 
 % Plot the Phase Angle vs Frequency     
-                    % Normalize angle radian values by pi radians
-plot(Freq, (angle(HF)./pi)*180, 'g', 'LineWidth', 2)
+% Normalize angle radian values by pi radians
+plot(Freq, angle(HF)./pi, 'g', 'LineWidth', 2)
 grid on
 xlabel('Digital Frequency  F (cycles/sample)')
-ylabel('Phase Response (degrees)')
+ylabel('Phase Response /pi')
 
 
 %% PLOT dB (LOG AMPLITUDE) SCALE FREQUENCY RESPONSE PLOT in a new figure
@@ -58,18 +58,18 @@ subplot(2,1,1)  % Display plots in 2 rows / 1 column; This is the 1st plot.
 plot(Freq, 20*log10(abs(HF)));
 grid on
 xlabel('Digital Frequency  F (cycles/sample)')
-ylabel('Magnitude Response')
+ylabel('Magnitude Response in dB')
 title('Frequency Response of Filter')
 
 % Plot the Phase Response below the Magnitude Response
 subplot(2,1,2) % Display plots in 2 rows / 1 column; This is the 2nd plot.
 
 % Plot the Phase Angle vs Frequency     
-                    % Normalize angle radian values by pi radians
-plot(Freq, (angle(HF)./pi)*180, 'g', 'LineWidth', 2)
+% Normalize angle radian values by pi radians
+plot(Freq, angle(HF)./pi, 'g', 'LineWidth', 2)
 grid on
 xlabel('Digital Frequency  F (cycles/sample)')
-ylabel('Phase Response (degrees)')
+ylabel('Phase Response /pi')
 
 %% Use Matlab freqz() function to plot frequency response
 % [H,W] = freqz(B,A,N) 
@@ -86,8 +86,21 @@ A = [1, -0.9];
 
 % Plot the magnitude and phase response (copy, paste, modify)
 figure(3)
-plot(W/(2*pi),20*log10(abs(H)));
+
+% Plot magnitude
+subplot(2,1,1)
+plot(W/(2*pi),20*log10(abs(H)), 'k');
+grid on
 xlabel('Digital Freq (cycles/sample)')
+ylabel('Magnitude Response in dB')
+title('Frequency Response of Filter')
+
+%Plot phase
+subplot(2, 1, 2)
+plot(W/(2*pi),(angle(H)/pi)*180, 'g', 'LineWidth', 2);
+grid on
+xlabel('Digital Frequency F (cycles/sample)')
+ylabel('Phase Response (degrees)')
 
 % Find the peak response and peak response frequency
 [peak_response, peak_response_index] = max(abs(HF))
