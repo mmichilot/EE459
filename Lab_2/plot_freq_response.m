@@ -1,6 +1,8 @@
 function plot_freq_response(Fd, HF, fsample, figure_num)
-%plot_freq_response Plots the frequency response of H(F)
+% function plot_freq_response(Fd, HF, fsample, figure_num)
+% Plots the frequency response of H(F)
 %
+%   Outputs:
 %   Fd = an array of digital frequency values (in units of 
 %        cycles/sample) that correspond to the H(F) frequency 
 %        response data values 
