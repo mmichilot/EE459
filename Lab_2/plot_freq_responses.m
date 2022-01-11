@@ -17,7 +17,7 @@ figure(figure_num);
 subplot(2,1,1);
 
 % Plot the magnitude of HF on a linear scale
-plot(Fd, abs(HF));
+plot(Fd, abs(HF), 'k', 'LineWidth', 1);
 grid on
 xlabel('Digital Frequency  F (cycles/sample)')
 ylabel('Magnitude Response')
@@ -28,11 +28,10 @@ subplot(2,1,2);
 
 % Plot the Phase Angle vs Frequency     
 % Normalized angle radian values by pi radians
-plot(Fd, (angle(HF)./pi), 'g', 'LineWidth', 2)
+plot(Fd, (angle(HF)./pi), 'g', 'LineWidth', 1)
 grid on
 xlabel('Digital Frequency  F (cycles/sample)')
 ylabel('Phase Response /pi')
-ylim([-1 1])
 
 
 figure(figure_num+1);
@@ -41,7 +40,7 @@ figure(figure_num+1);
 subplot(2,1,1);
 
 % Plot the magnitude of HF on a linear scale
-plot(fsample*Fd, 20*log10(abs(HF)));
+plot(fsample*Fd, 20*log10(abs(HF)), 'k', 'LineWidth', 1);
 grid on
 xlabel('Analog Frequency  f (Hz)')
 ylabel('Magnitude Response (dB)')
@@ -52,11 +51,10 @@ subplot(2,1,2);
 
 % Plot the Phase Angle vs Frequency     
 % Normalized angle radian values by pi radians
-plot(fsample*Fd, (angle(HF)./pi), 'g', 'LineWidth', 2)
+plot(fsample*Fd, (angle(HF)./pi), 'g', 'LineWidth', 1)
 grid on
 xlabel('Analog Frequency f (Hz)')
 ylabel('Phase Response /pi')
-ylim([-1 1])
 
 end
 
