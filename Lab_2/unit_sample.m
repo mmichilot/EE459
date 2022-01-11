@@ -2,10 +2,10 @@ function  [dn, n] = unit_sample(number_of_samples)
 % function  [dn, n] = unit_sample(number_of_samples)
 % Returns a unit sample sequence
 %   
-%   Inputs:
+%   Arguments:
 %   number_of_samples = number of samples the should be returned
 %
-%   Outputs:
+%   Returns:
 %   dn = has the unit sample sequence values 
 %   n = has the sample index values (starting at 0) corresponding 
 %       to each of the dn samples 
